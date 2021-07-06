@@ -11,7 +11,7 @@ import { Satellite } from './satellite';
 export class AppComponent {
   title = 'orbit-report';
   sourceList: Satellite [];
-  displayList:  Satellite [];
+  displayList:  Satellite[];
   constructor() {
     this.displayList = [];
       this.sourceList = [];
@@ -24,7 +24,7 @@ export class AppComponent {
 
           for(let i=0; i < fetchedSatellites.length;i++){
               let newSatellite = new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].launchDate, fetchedSatellites[i].orbitType,fetchedSatellites[i].operational)
-              this.sourceList.push(newSatellite)
+              this.sourceList.push(newSatellite);
               this.displayList = this.sourceList.slice(0);
              // this.displayList = matchingSatellites;
             };
@@ -35,6 +35,8 @@ export class AppComponent {
         
           
   };
+     
+   
   search(searchTerm: string): void {
    let matchingSatellites: Satellite[] = [];
    searchTerm = searchTerm.toLowerCase();
@@ -46,11 +48,13 @@ export class AppComponent {
    }
    // assign this.displayList to be the array of matching satellites
    // this will cause Angular to re-make the table, but now only containing matches
-  this.displayList = matchingSatellites;
+   this.displayList = matchingSatellites;
+}
+
 }
      
      
-  };
+  
       
 
    

@@ -1,4 +1,5 @@
 import { stringify } from "@angular/compiler/src/util";
+import { NgForm } from "@angular/forms";
 
 export class Satellite {
     name: string;
@@ -6,7 +7,7 @@ export class Satellite {
     type: string;
     operational: boolean;
     launchDate: string;
-    shouldShowWarning: boolean = false;
+   // shouldShowWarning: boolean = false;
 
 
     constructor(name: string, type: string, launchDate: string, orbitType: string, operational: boolean){
@@ -18,12 +19,12 @@ export class Satellite {
       
     }
 
-    // shouldShowWarning():boolean{
-    //     if (this.type === 'Space Debris'){
-    //         return true;
-    //     } else {
-    //         return false;
-    //     }
-    // }
-     
-}
+    shouldShowWarning(): boolean{
+        if (this.type === 'Space Debris'){
+            return true;
+        } else {
+            return false;
+        }
+    }
+}  
+
