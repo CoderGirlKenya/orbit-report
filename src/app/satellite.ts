@@ -20,12 +20,11 @@ export class Satellite {
     }
 
     shouldShowWarning(): boolean{
-        for(let i =0; i < this.type.length; i++){
-        if (this.type[i] === 'Space Debris'){
+            if (this.type == 'Space Debris'){
             return true;
         } else {
             return false;
         }
-    }
+    
 }  
 }
